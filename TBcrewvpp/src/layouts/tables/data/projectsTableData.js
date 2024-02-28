@@ -17,166 +17,222 @@
 */
 
 /* eslint-disable react/prop-types */
-// @mui material components
-import Icon from "@mui/material/Icon";
-
 // Vision UI Dashboard React components
 import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
-import VuiProgress from "components/VuiProgress";
+import VuiAvatar from "components/VuiAvatar";
+import VuiBadge from "components/VuiBadge";
 
 // Images
-import AdobeXD from "examples/Icons/AdobeXD";
-import Atlassian from "examples/Icons/Atlassian";
-import Slack from "examples/Icons/Slack";
-import Spotify from "examples/Icons/Spotify";
-import Jira from "examples/Icons/Jira";
-import Invision from "examples/Icons/Invision";
-import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
-import logoInvesion from "assets/images/small-logos/logo-invision.svg";
-import logoJira from "assets/images/small-logos/logo-jira.svg";
-import logoSlack from "assets/images/small-logos/logo-slack.svg";
-import logoWebDev from "assets/images/small-logos/logo-webdev.svg";
-import logoXD from "assets/images/small-logos/logo-xd.svg";
+import avatar1 from "assets/images/avatar1.png";
+import avatar2 from "assets/images/avatar2.png";
+import avatar3 from "assets/images/avatar3.png";
+import avatar4 from "assets/images/avatar4.png";
+import avatar5 from "assets/images/avatar5.png";
+import avatar6 from "assets/images/avatar6.png";
 
-function Completion({ value, color }) {
+function Author({ image, name, email }) {
   return (
-    <VuiBox display="flex" flexDirection="column" alignItems="flex-start">
-      <VuiTypography variant="button" color="white" fontWeight="medium" mb="4px">
-        {value}%&nbsp;
-      </VuiTypography>
-      <VuiBox width="8rem">
-        <VuiProgress value={value} color={color} sx={{ background: "#2D2E5F" }} label={false} />
+    <VuiBox display="flex" alignItems="center" px={1} py={0.5}>
+      <VuiBox mr={2}>
+        <VuiAvatar src={image} alt={name} size="sm" variant="rounded" />
+      </VuiBox>
+      <VuiBox display="flex" flexDirection="column">
+        <VuiTypography variant="button" color="white" fontWeight="medium">
+          {name}
+        </VuiTypography>
+        <VuiTypography variant="caption" color="text">
+          {email}
+        </VuiTypography>
       </VuiBox>
     </VuiBox>
   );
 }
 
-const action = (
-  <Icon sx={{ cursor: "pointer", fontWeight: "bold" }} fontSize="small">
-    more_vert
-  </Icon>
-);
+function Function({ job, org }) {
+  return (
+    <VuiBox display="flex" flexDirection="column">
+      <VuiTypography variant="caption" fontWeight="medium" color="white">
+        {job}
+      </VuiTypography>
+      <VuiTypography variant="caption" color="text">
+        {org}
+      </VuiTypography>
+    </VuiBox>
+  );
+}
 
 export default {
   columns: [
-    { name: "project", align: "left" },
-    { name: "budget", align: "left" },
-    { name: "status", align: "left" },
-    { name: "completion", align: "center" },
-    { name: "action", align: "center" },
+    // { name: "userid", align: "left" },
+    { name: "SMP", align: "center" },
+    { name: "status", align: "center" },
+    { name: "전력판매량(kWh)", align: "center" },
+    { name: "전력판매액(원)", align: "center" },
   ],
 
   rows: [
     {
-      project: (
-        <VuiBox display="flex" alignItems="center">
-          <AdobeXD size="20px" />
-          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-            Chakra Vision UI Version
-          </VuiTypography>
-        </VuiBox>
-      ),
-      budget: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          $14,000
-        </VuiTypography>
-      ),
+      // userid: <Author name="Esthera Jackson" email="esthera@simmmple.com" />,
+      SMP: 93,
       status: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          Working
+        <VuiBadge
+          variant="standard"
+          badgeContent="구입"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      '전력판매량(kWh)': (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          240
         </VuiTypography>
       ),
-      completion: <Completion value={60} color="info" />,
-      action,
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          22,320
+        </VuiTypography>
+      ),
     },
     {
-      project: (
-        <VuiBox display="flex" alignItems="center">
-          <Atlassian size="20px" />
-          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-            Add Progress Track
-          </VuiTypography>
-        </VuiBox>
-      ),
-      budget: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          $3,000
-        </VuiTypography>
-      ),
+      SMP: 92,
       status: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          Done
+        <VuiBadge
+          variant="standard"
+          badgeContent="구입"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      '전력판매량(kWh)': (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          186
         </VuiTypography>
       ),
-      completion: <Completion value={100} color="info" />,
-      action,
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          17,112
+        </VuiTypography>
+      ),
     },
     {
-      project: (
-        <VuiBox display="flex" alignItems="center">
-          <Slack size="20px" />
-          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-            Fix Platform Errors
-          </VuiTypography>
-        </VuiBox>
-      ),
-      budget: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          Not set
-        </VuiTypography>
-      ),
+      SMP: 97,
       status: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          Canceled
+        <VuiBadge
+          variant="standard"
+          badgeContent="구입"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      '전력판매량(kWh)': (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          360
         </VuiTypography>
       ),
-      completion: <Completion value={30} color="info" />,
-      action,
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          34,920
+        </VuiTypography>
+      ),
     },
     {
-      project: (
-        <VuiBox display="flex" alignItems="center">
-          <Spotify size="20px" />
-          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-            Launch our Mobile App
-          </VuiTypography>
-        </VuiBox>
-      ),
-      budget: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          $32,000
-        </VuiTypography>
-      ),
+      SMP: 97,
       status: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          Canceled
+        <VuiBadge
+          variant="standard"
+          badgeContent="구입"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      '전력판매량(kWh)': (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          360
         </VuiTypography>
       ),
-      completion: <Completion value={0} color="info" />,
-      action,
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          34,920
+        </VuiTypography>
+      ),
     },
     {
-      project: (
-        <VuiBox display="flex" alignItems="center">
-          <Jira size="20px" />
-          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-            Add the New Pricing Page
-          </VuiTypography>
-        </VuiBox>
-      ),
-      budget: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          $2,300
-        </VuiTypography>
-      ),
+      SMP: 97,
       status: (
-        <VuiTypography variant="button" color="white" fontWeight="medium">
-          Done
+        <VuiBadge
+          variant="standard"
+          badgeContent="구입"
+          size="xs"
+          container
+          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
+            background: "unset",
+            border: `${borderWidth[1]} solid ${white.main}`,
+            borderRadius: borderRadius.md,
+            color: white.main,
+          })}
+        />
+      ),
+      '전력판매량(kWh)': (
+        <VuiTypography variant="caption" color="white" fontWeight="medium">
+          360
         </VuiTypography>
       ),
-      completion: <Completion value={100} color="info" />,
-      action,
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          34,920
+        </VuiTypography>
+      ),
     },
+    // ///////////////////////////////////////////////////////////
+    
   ],
 };
+
+// {
+    //   project: (
+    //     <VuiBox display="flex" alignItems="center">
+    //       <AdobeXD size="20px" />
+    //       <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+    //         Chakra Vision UI Version
+    //       </VuiTypography>
+    //     </VuiBox>
+    //   ),
+    //   budget: (
+    //     <VuiTypography variant="button" color="white" fontWeight="medium">
+    //       $14,000
+    //     </VuiTypography>
+    //   ),
+    //   status: (
+    //     <VuiTypography variant="button" color="white" fontWeight="medium">
+    //       Working
+    //     </VuiTypography>
+    //   ),
+    //   completion: <Completion value={60} color="info" />,
+    //   action,
+    // },
+    

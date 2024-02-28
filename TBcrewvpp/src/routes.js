@@ -53,7 +53,7 @@ import { IoIosDocument } from "react-icons/io";
 import { BsFillPersonFill } from "react-icons/bs";
 import { IoBuild } from "react-icons/io5";
 import { BsCreditCardFill } from "react-icons/bs";
-import { IoStatsChart } from "react-icons/io5";
+import { IoCash } from "react-icons/io5";
 import { IoHome } from "react-icons/io5";
 
 const routes = [
@@ -66,15 +66,15 @@ const routes = [
     component: Dashboard,
     noCollapse: true,
   },
-  // {
-  //   type: "collapse",
-  //   name: "Tables",
-  //   key: "tables",
-  //   route: "/tables",
-  //   icon: <IoStatsChart size="15px" color="inherit" />,
-  //   component: Tables,
-  //   noCollapse: true,
-  // },
+  {
+    type: "collapse",
+    name: "Trading",
+    key: "Trading",
+    route: "/Trading",
+    icon: <IoCash size="15px" color="inherit" />,
+    component: Tables,
+    noCollapse: true,
+  },
   // {
   //   type: "collapse",
   //   name: "Billing",

@@ -1,17 +1,17 @@
 {
-	"name": "vision-ui-dashboard-react",
+	"name": "turbinecrewvpp",
 	"version": "3.0.0",
 	"private": true,
 	"author": "Creative Tim",
 	"license": "See license in https://www.creative-tim.com/license",
 	"description": "Material UI version of Vision UI Dashboard by Creative Tim",
-	"homepage": "https://demos.creative-tim.com/vision-ui-dashboard-react/#/dashboard",
+	"homepage": "https://demos.creative-tim.com/turbinecrewvpp/#/dashboard",
 	"bugs": {
-		"url": "https://github.com/creativetimofficial/vision-ui-dashboard-react/issues"
+		"url": "https://github.com/creativetimofficial/turbinecrewvpp/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/creativetimofficial/vision-ui-dashboard-react.git"
+		"url": "git+https://github.com/creativetimofficial/turbinecrewvpp.git"
 	},
 	"dependencies": {
 		"@emotion/cache": "11.4.0",

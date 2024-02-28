@@ -64,21 +64,21 @@ function Function({ job, org }) {
 
 export default {
   columns: [
-    { name: "author", align: "left" },
-    { name: "function", align: "left" },
+    // { name: "userid", align: "left" },
+    { name: "SMP", align: "center" },
     { name: "status", align: "center" },
-    { name: "employed", align: "center" },
-    { name: "action", align: "center" },
+    { name: "전력판매량(kWh)", align: "center" },
+    { name: "전력판매액(원)", align: "center" },
   ],
 
   rows: [
     {
-      author: <Author image={avatar4} name="Esthera Jackson" email="esthera@simmmple.com" />,
-      function: <Function job="Manager" org="Organization" />,
+      // userid: <Author name="Esthera Jackson" email="esthera@simmmple.com" />,
+      SMP: 93,
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Online"
+          badgeContent="판매"
           color="success"
           size="xs"
           container
@@ -90,52 +90,23 @@ export default {
           })}
         />
       ),
-      employed: (
+      '전력판매량(kWh)': (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-          23/04/18
+          240
         </VuiTypography>
       ),
-      action: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          22,320
         </VuiTypography>
       ),
     },
     {
-      author: <Author image={avatar2} name="Alexa Liras" email="alexa@simmmple.com" />,
-      function: <Function job="Programator" org="Developer" />,
+      SMP: 92,
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Offline"
-          size="xs"
-          container
-          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
-            background: "unset",
-            border: `${borderWidth[1]} solid ${white.main}`,
-            borderRadius: borderRadius.md,
-            color: white.main,
-          })}
-        />
-      ),
-      employed: (
-        <VuiTypography variant="caption" color="white" fontWeight="medium">
-          11/01/19
-        </VuiTypography>
-      ),
-      action: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
-        </VuiTypography>
-      ),
-    },
-    {
-      author: <Author image={avatar3} name="Laurent Michael" email="laurent@simmmple.com" />,
-      function: <Function job="Executive" org="Projects" />,
-      status: (
-        <VuiBadge
-          variant="standard"
-          badgeContent="Online"
+          badgeContent="판매"
           color="success"
           size="xs"
           container
@@ -147,24 +118,23 @@ export default {
           })}
         />
       ),
-      employed: (
+      '전력판매량(kWh)': (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-          19/09/17
+          186
         </VuiTypography>
       ),
-      action: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          17,112
         </VuiTypography>
       ),
     },
     {
-      author: <Author image={avatar1} name="Freduardo Hill" email="freduardo@simmmple.com" />,
-      function: <Function job="Programator" org="Developer" />,
+      SMP: 97,
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Online"
+          badgeContent="판매"
           color="success"
           size="xs"
           container
@@ -176,70 +146,70 @@ export default {
           })}
         />
       ),
-      employed: (
+      '전력판매량(kWh)': (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-          24/12/08
+          360
         </VuiTypography>
       ),
-      action: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          34,920
         </VuiTypography>
       ),
     },
     {
-      author: <Author image={avatar5} name="Daniel Thomas" email="daniel@simmmple.com" />,
-      function: <Function job="Manager" org="Executive" />,
+      SMP: 97,
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Offline"
+          badgeContent="판매"
+          color="success"
           size="xs"
           container
-          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
-            background: "unset",
-            border: `${borderWidth[1]} solid ${white.main}`,
+          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+            background: success.main,
+            border: `${borderWidth[1]} solid ${success.main}`,
             borderRadius: borderRadius.md,
             color: white.main,
           })}
         />
       ),
-      employed: (
+      '전력판매량(kWh)': (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-          04/10/21
+          360
         </VuiTypography>
       ),
-      action: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          34,920
         </VuiTypography>
       ),
     },
     {
-      author: <Author image={avatar6} name="Mark Wilson" email="mark@simmmple.com" />,
-      function: <Function job="Programtor" org="Developer" />,
+      SMP: 97,
       status: (
         <VuiBadge
           variant="standard"
-          badgeContent="Offline"
+          badgeContent="판매"
+          color="success"
           size="xs"
           container
-          sx={({ palette: { white }, borders: { borderRadius, borderWidth } }) => ({
-            background: "unset",
-            border: `${borderWidth[1]} solid ${white.main}`,
+          sx={({ palette: { white, success }, borders: { borderRadius, borderWidth } }) => ({
+            background: success.main,
+            border: `${borderWidth[1]} solid ${success.main}`,
             borderRadius: borderRadius.md,
             color: white.main,
           })}
         />
       ),
-      employed: (
+      '전력판매량(kWh)': (
         <VuiTypography variant="caption" color="white" fontWeight="medium">
-          14/09/20
+          360
         </VuiTypography>
       ),
-      action: (
-        <VuiTypography component="a" href="#" variant="caption" color="text" fontWeight="medium">
-          Edit
+      '전력판매액(원)': (
+        <VuiTypography  variant="caption" color="white" fontWeight="medium">
+          34,920
         </VuiTypography>
       ),
     },
